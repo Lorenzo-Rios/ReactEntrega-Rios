@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ReactEntrega-Rios/static/css/main.f251f349.css",
+    "main.js": "/ReactEntrega-Rios/static/js/main.bf269086.js",
+    "static/js/453.146d7278.chunk.js": "/ReactEntrega-Rios/static/js/453.146d7278.chunk.js",
+    "index.html": "/ReactEntrega-Rios/index.html",
+    "main.f251f349.css.map": "/ReactEntrega-Rios/static/css/main.f251f349.css.map",
+    "main.bf269086.js.map": "/ReactEntrega-Rios/static/js/main.bf269086.js.map",
+    "453.146d7278.chunk.js.map": "/ReactEntrega-Rios/static/js/453.146d7278.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f251f349.css",
+    "static/js/main.bf269086.js"
+  ]
+}
