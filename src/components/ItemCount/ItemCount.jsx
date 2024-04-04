@@ -1,4 +1,4 @@
-import { Button, Heading } from '@chakra-ui/react'
+import { Button, Heading, Flex } from '@chakra-ui/react'
 import React, { useState } from 'react'
 
 const ItemCount = () => {
@@ -14,11 +14,11 @@ const ItemCount = () => {
         count > 1 && setCount(count - 1);
     }
     return(
-        <>
+        <Flex>
             <Button onClick={decrementar}>-</Button>
             <Heading>{count}</Heading>
             <Button onClick={incrementar}>+</Button>
-        </>
+        </Flex>
     )
 }
 

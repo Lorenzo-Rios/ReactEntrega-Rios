@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/ReactEntrega-Rios/static/css/main.f251f349.css",
-    "main.js": "/ReactEntrega-Rios/static/js/main.bf269086.js",
+    "main.css": "/ReactEntrega-Rios/static/css/main.d5289b2f.css",
+    "main.js": "/ReactEntrega-Rios/static/js/main.ae458e82.js",
     "static/js/453.146d7278.chunk.js": "/ReactEntrega-Rios/static/js/453.146d7278.chunk.js",
+    "static/media/newquintuple.jpg": "/ReactEntrega-Rios/static/media/newquintuple.c6a870ae9c2d79857aba.jpg",
+    "static/media/newtriple.png": "/ReactEntrega-Rios/static/media/newtriple.e9218aeba093d60d98c5.png",
+    "static/media/cuadruple.png": "/ReactEntrega-Rios/static/media/cuadruple.e0ab35ad36afdc35d762.png",
+    "static/media/newdoble.png": "/ReactEntrega-Rios/static/media/newdoble.d59a05749288613afad5.png",
     "index.html": "/ReactEntrega-Rios/index.html",
-    "main.f251f349.css.map": "/ReactEntrega-Rios/static/css/main.f251f349.css.map",
-    "main.bf269086.js.map": "/ReactEntrega-Rios/static/js/main.bf269086.js.map",
+    "main.d5289b2f.css.map": "/ReactEntrega-Rios/static/css/main.d5289b2f.css.map",
+    "main.ae458e82.js.map": "/ReactEntrega-Rios/static/js/main.ae458e82.js.map",
     "453.146d7278.chunk.js.map": "/ReactEntrega-Rios/static/js/453.146d7278.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f251f349.css",
-    "static/js/main.bf269086.js"
+    "static/css/main.d5289b2f.css",
+    "static/js/main.ae458e82.js"
   ]
 }
