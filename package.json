@@ -4,10 +4,13 @@
   "private": true,
   "homepage": "https://lorenzo-rios.github.io/ReactEntrega-Rios/",
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/styled": "^11.11.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
+    "framer-motion": "^11.0.24",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
