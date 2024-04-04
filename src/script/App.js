@@ -1,10 +1,10 @@
-import Nav from '../components/NavBar/Nav';
+import App from '../App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/App.css';
 
-export default function App() {
+export default function Appi() {
   return (
-    <Nav/>
+    <App/>
   );
 }
 
