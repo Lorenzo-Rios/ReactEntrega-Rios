@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../assets/cuadruple.png";
 import { addCart } from "../../utils/cart/cart";
+import masIMG from "../../assets/mas.png";
 
 export default function Burguer({ price, title, img, id }) {
     const [quantity, setQuantity] = useState(1);
@@ -15,8 +16,12 @@ export default function Burguer({ price, title, img, id }) {
     };
 
     async function handleCart() {
-        await addCart({ id, price, title, quantity });
-        alert("Producto agregado al carrito");
+        try {
+            await addCart({ id, price, title, quantity });
+            alert("Producto agregado al carrito");
+        } catch (error) {
+            console.error("Error adding to cart:", error);
+        }
     }
 
     return (
@@ -27,7 +32,7 @@ export default function Burguer({ price, title, img, id }) {
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <button onClick={decrementar}>-</button>
                 <h4 style={{ margin: '0 10px' }}>{quantity}</h4>
-                <button onClick={incrementar}>+</button>
+                <button onClick={incrementar} src={masIMG}></button>
             </div>
             <button onClick={handleCart}>Agregar al carrito</button>
         </div>

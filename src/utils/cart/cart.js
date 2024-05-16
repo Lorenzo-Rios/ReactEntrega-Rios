@@ -1,15 +1,12 @@
 async function getCart() {
     const cart = localStorage.getItem('cart');
-    return cart ? JSON.parse(cart) : [];
+    try {
+        return cart ? JSON.parse(cart) : [];
+    } catch (error) {
+        console.error("Error parsing cart JSON:", error);
+        return [];
+    }
 }
-
-/**
- *  item 
- *  id: string
- *  price: number
- *  name: string
- *  quantity: number
- */
 
 async function addCart(item) {
     const cart = await getCart();
@@ -21,10 +18,26 @@ async function addCart(item) {
         cart.push(item);
     }
 
-    localStorage.setItem('cart', JSON.stringify(cart));
+    try {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    } catch (error) {
+        console.error("Error setting cart JSON:", error);
+    }
+}
+
+async function removeCartItem(itemId) {
+    const cart = await getCart();
+    const newCart = cart.filter(item => item.id !== itemId);
+
+    try {
+        localStorage.setItem('cart', JSON.stringify(newCart));
+    } catch (error) {
+        console.error("Error removing item from cart:", error);
+    }
 }
 
 export {
     getCart,
-    addCart
+    addCart,
+    removeCartItem
 }

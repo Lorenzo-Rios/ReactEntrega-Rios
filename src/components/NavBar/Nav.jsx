@@ -13,42 +13,46 @@ export default function NavBar({ setSelectedBurger, toggleCart }) {
         setSelectedBurger(null); 
     };
 
+    const handleCartClick = () => {
+        console.log("Cart icon clicked");
+        toggleCart();
+    };
+    
+
     return (
-        <>
-            <StyledContainer>
-                <Navbar bg="light" expand="lg" className='Nav'>
-                    <Navbar.Brand href="#home" className='Nav-item'>
-                        <img
-                            src={logo}
-                            width="30"
-                            height="30"
-                            className="d-inline-block-align-top"
-                            alt="Logo"
-                        />
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className='Nav-item'>
-                            <Nav.Link onClick={handleInicioClick} href="#home">Inicio</Nav.Link>
-                            <StyledDropdown>
-                                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                        Hamburguesas
-                                    </Dropdown.Toggle>
+        <StyledContainer>
+            <Navbar bg="light" expand="lg" className='Nav'>
+                <Navbar.Brand href="#home" className='Nav-item'>
+                    <img
+                        src={logo}
+                        width="30"
+                        height="30"
+                        className="d-inline-block-align-top"
+                        alt="Logo"
+                    />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className='Nav-item'>
+                        <Nav.Link onClick={handleInicioClick} href="#home">Inicio</Nav.Link>
+                        <StyledDropdown>
+                                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                    Hamburguesas
+                                </Dropdown.Toggle>
 
-                                    <Dropdown.Menu className='dropdown'>
-                                        <Dropdown.Item className='dropdown-text' onClick={() => handleBurgerSelect('doble')}>Doble</Dropdown.Item>
-                                        <Dropdown.Item className='dropdown-text' onClick={() => handleBurgerSelect('triple')}>Triple</Dropdown.Item>
-                                        <Dropdown.Item className='dropdown-text' onClick={() => handleBurgerSelect('cuadruple')}>Cuadruple</Dropdown.Item>
-                                        <Dropdown.Item className='dropdown-text' onClick={() => handleBurgerSelect('quintuple')}>Quintuple</Dropdown.Item>
-                                    </Dropdown.Menu>
-                            </StyledDropdown>
+                                <Dropdown.Menu className='dropdown'>
+                                    <Dropdown.Item className='dropdown-text' onClick={() => handleBurgerSelect('doble')}>Doble</Dropdown.Item>
+                                    <Dropdown.Item className='dropdown-text' onClick={() => handleBurgerSelect('triple')}>Triple</Dropdown.Item>
+                                    <Dropdown.Item className='dropdown-text' onClick={() => handleBurgerSelect('cuadruple')}>Cuadruple</Dropdown.Item>
+                                    <Dropdown.Item className='dropdown-text' onClick={() => handleBurgerSelect('quintuple')}>Quintuple</Dropdown.Item>
+                                </Dropdown.Menu>
+                        </StyledDropdown>
 
-                        </Nav>
-                    </Navbar.Collapse>
-                    <CartWidget toggleCart={toggleCart} className='Nav-item'/>
-                </Navbar>
-            </StyledContainer>
-        </>
+                    </Nav>
+                </Navbar.Collapse>
+                <CartWidget onClick={handleCartClick} className='Nav-item'/>
+            </Navbar>
+        </StyledContainer>
     );
 }
 

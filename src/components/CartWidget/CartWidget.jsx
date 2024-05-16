@@ -8,6 +8,12 @@ const StyledCartIcon = styled(TiShoppingCart)`
   cursor: pointer;
 `;
 
-export default function CartWidget({ toggleCart }) {
-  return <StyledCartIcon onClick={toggleCart} />;
+export default function CartWidget({ onClick }) {
+  const handleClick = () => {
+    if (onClick) {
+      onClick(); // Llama a la función onClick proporcionada por el componente padre
+    }
+  };
+
+  return <StyledCartIcon onClick={handleClick} />;
 }
