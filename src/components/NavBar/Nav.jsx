@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Navbar, Nav, Dropdown } from 'react-bootstrap';
 import CartWidget from '../CartWidget/CartWidget';
 
-export default function NavBar({ setSelectedBurger }) {
+export default function NavBar({ setSelectedBurger, toggleCart }) {
     const handleBurgerSelect = (burger) => {
         setSelectedBurger(burger);
     };
@@ -45,7 +45,7 @@ export default function NavBar({ setSelectedBurger }) {
 
                         </Nav>
                     </Navbar.Collapse>
-                        <CartWidget className='Nav-item'/>
+                    <CartWidget toggleCart={toggleCart} className='Nav-item'/>
                 </Navbar>
             </StyledContainer>
         </>

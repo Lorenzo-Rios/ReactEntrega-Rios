@@ -1,6 +1,6 @@
 async function getCart() {
-    const cart = localStorage.getItem('cart')
-    return cart ? cart : []
+    const cart = localStorage.getItem('cart');
+    return cart ? JSON.parse(cart) : [];
 }
 
 /**
@@ -12,14 +12,16 @@ async function getCart() {
  */
 
 async function addCart(item) {
-    const cart = await getCart()
-    // Validar que item respete el formato
-    if (!cart) {
-        localStorage.setItem('cart', [item])
+    const cart = await getCart();
+    const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
+
+    if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += item.quantity;
     } else {
-        // validar si en el carrito existe algo igual sumarle 1 en quantity
-        localStorage.setItem('cart', [...cart, item])
+        cart.push(item);
     }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 export {
