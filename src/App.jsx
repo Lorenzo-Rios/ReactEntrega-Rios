@@ -8,6 +8,7 @@ import CardSelect from './components/CardSelect/CardSelect';
 import { ChakraProvider } from '@chakra-ui/react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { getCart, removeCartItem } from './utils/cart/cart'; // Importar funciones de cart.js
+import { remove } from 'firebase/database';
 
 // Estilos con Styled Components
 const Container = styled.div`
@@ -223,7 +224,7 @@ const App = () => {
         // Realizar el procesamiento del pago aquí
         // Por simplicidad, simularemos el procesamiento del pago con un tiempo de espera de 2 segundos
         setTimeout(async () => {
-            await removeCartItem(); // Vaciar el carrito al realizar el pago
+            await removeCartItem(remove.apply); // Vaciar el carrito al realizar el pago
             setShowConfirmation(true);
         }, 2000);
     };
@@ -247,6 +248,9 @@ const App = () => {
                         <input type="number" placeholder="Número de tarjeta" />
                         <input type="number" placeholder="CVV" />
                         <input type="number" placeholder="Código postal" />
+                        <input type="text" placeholder="Direccion entre calles" />
+                        <input type="text" placeholder="Numero de casa/Departamento" />
+                        <input type="number" placeholder="Numero de celular" />
                         <BuyButton onClick={handlePayment}>Pagar</BuyButton>
                     </FormContainer>
                 ) : (
