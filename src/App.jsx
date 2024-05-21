@@ -7,7 +7,7 @@ import Modal from './components/Modal/Modal';
 import CardSelect from './components/CardSelect/CardSelect';
 import { ChakraProvider } from '@chakra-ui/react';
 import { AiOutlineClose } from 'react-icons/ai';
-import { getCart, removeCartItem } from './utils/cart/cart'; // Importar funciones de cart.js
+import { emptyCart, getCart, removeCartItem } from './utils/cart/cart'; // Importar funciones de cart.js
 import { remove } from 'firebase/database';
 
 // Estilos con Styled Components
@@ -221,13 +221,16 @@ const App = () => {
     };
 
     const handlePayment = async () => {
-        // Realizar el procesamiento del pago aquí
-        // Por simplicidad, simularemos el procesamiento del pago con un tiempo de espera de 2 segundos
+        handleClearCart();
         setTimeout(async () => {
             await removeCartItem(remove.apply); // Vaciar el carrito al realizar el pago
             setShowConfirmation(true);
         }, 2000);
     };
+
+    const handleClearCart = async () => {
+        emptyCart();
+    }
 
     return (
         <ChakraProvider>
